@@ -68,7 +68,7 @@
 	<body>
 		
 	<div class="fh5co-loader"></div>
-	
+
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
@@ -179,6 +179,7 @@
 									</div>
 									<p>Local: Igreja Nossa Senhora Conceição Vila Arens<br/>
 									Endereço: R. Gen. Carneiro, 106 - Vila Arens II, Jundiaí - SP, 13202-590</p>
+									
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 text-center">
@@ -587,47 +588,55 @@
 	<script src="js/main.js"></script>
 
 	<script>
-    // var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
-    var d = new Date('2022-12-10T16:00:00');
-
-    // default example
-    simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
-
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
-
-	window.smoothScroll = function(target) {
-		var scrollContainer = target;
-		do { //find scroll container
-			scrollContainer = scrollContainer.parentNode;
-			if (!scrollContainer) return;
-			scrollContainer.scrollTop += 1;
-		} while (scrollContainer.scrollTop == 0);
-
-		var targetY = 0;
-		do { //find the top of target relatively to the container
-			if (target == scrollContainer) break;
-			targetY += target.offsetTop;
-		} while (target = target.offsetParent);
-
-		scroll = function(c, a, b, i) {
-			i++; if (i > 30) return;
-			c.scrollTop = a + (b - a) / 30 * i;
-			setTimeout(function(){ scroll(c, a, b, i); }, 20);
+		function myMap() {
+			var mapProp= {
+				center:new google.maps.LatLng(51.508742,-0.120850),
+				zoom:5,
+			};
+			var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 		}
-		// start scrolling
-		scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-	}
-</script>
+		
+		// var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+		var d = new Date('2022-12-10T16:00:00');
+
+		// default example
+		simplyCountdown('.simply-countdown-one', {
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate()
+		});
+
+		//jQuery example
+		$('#simply-countdown-losange').simplyCountdown({
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate(),
+			enableUtc: false
+		});
+
+		window.smoothScroll = function(target) {
+			var scrollContainer = target;
+			do { //find scroll container
+				scrollContainer = scrollContainer.parentNode;
+				if (!scrollContainer) return;
+				scrollContainer.scrollTop += 1;
+			} while (scrollContainer.scrollTop == 0);
+
+			var targetY = 0;
+			do { //find the top of target relatively to the container
+				if (target == scrollContainer) break;
+				targetY += target.offsetTop;
+			} while (target = target.offsetParent);
+
+			scroll = function(c, a, b, i) {
+				i++; if (i > 30) return;
+				c.scrollTop = a + (b - a) / 30 * i;
+				setTimeout(function(){ scroll(c, a, b, i); }, 20);
+			}
+			// start scrolling
+			scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+		}
+	</script>
 
 	</body>
 </html>
