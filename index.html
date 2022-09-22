@@ -647,6 +647,8 @@
 		});
 
 		window.smoothScroll = function(target) {
+			$('body').removeClass('overflow offcanvas');
+			$('a .active').removeClass('active');
 			var scrollContainer = target;
 			do { //find scroll container
 				scrollContainer = scrollContainer.parentNode;
@@ -668,14 +670,6 @@
 			// start scrolling
 			scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 		}
-
-		$(function(){
-			$('nav li a').on('click', function(){
-				if ( $('body').hasClass('overflow offcanvas') ) {
-					$('body').removeClass('overflow offcanvas');
-				};
-			});
-		})
 	</script>
 
 	</body>
