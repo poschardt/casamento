@@ -85,7 +85,7 @@
 						<!-- <li class="active"><a href="index.html">Home</a></li> -->
 						<li><a href="index.html">Home</a></li>
 						<li class="has-dropdown">
-							<a href="#fh5co-event">Celebração</a>
+							<a onclick="smoothScroll(document.getElementById('fh5co-event'))">Celebração</a>
 							<!-- <ul class="dropdown">
 								<li><a href="#">Igreja</a></li>
 								<li><a href="#">Salão</a></li>
@@ -646,15 +646,28 @@
 			enableUtc: false
 		});
 
-		var $root = $('html, body');
+		window.smoothScroll = function(target) {
+			var scrollContainer = target;
+			do { //find scroll container
+				scrollContainer = scrollContainer.parentNode;
+				if (!scrollContainer) return;
+				scrollContainer.scrollTop += 1;
+			} while (scrollContainer.scrollTop == 0);
 
-		$('a[href^="#"]').click(function () {
-			$root.animate({
-				scrollTop: $( $.attr(this, 'href') ).offset().top
-			}, 500);
+			var targetY = 0;
+			do { //find the top of target relatively to the container
+				if (target == scrollContainer) break;
+				targetY += target.offsetTop;
+			} while (target = target.offsetParent);
 
-			return false;
-		});
+			scroll = function(c, a, b, i) {
+				i++; if (i > 30) return;
+				c.scrollTop = a + (b - a) / 30 * i;
+				setTimeout(function(){ scroll(c, a, b, i); }, 20);
+			}
+			// start scrolling
+			scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+		}
 	</script>
 
 	</body>
