@@ -668,6 +668,14 @@
 			// start scrolling
 			scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 		}
+
+		$(function(){
+			$('nav li a').on('click', function(){
+				if ( $('body').hasClass('overflow offcanvas') ) {
+					$('body').removeClass('overflow offcanvas');
+				};
+			});
+		})
 	</script>
 
 	</body>
