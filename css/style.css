@@ -993,6 +993,7 @@ form label {
 #fh5co-testimonial,
 #fh5co-services,
 #fh5co-started,
+#fh5co-dresscode,
 #fh5co-confirmar,
 #fh5co-footer,
 #fh5co-event,
@@ -1007,6 +1008,7 @@ form label {
   #fh5co-testimonial,
   #fh5co-services,
   #fh5co-started,
+  #fh5co-dresscode,
   #fh5co-confirmar,
   #fh5co-footer,
   #fh5co-event,
@@ -1331,7 +1333,7 @@ form label {
   margin-bottom: 10px;
 }
 
-#fh5co-started, #fh5co-confirmar {
+#fh5co-started, #fh5co-confirmar, #fh5co-dresscode {
   position: relative;
 }
 #fh5co-started .overlay {
@@ -1342,13 +1344,13 @@ form label {
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
 }
-#fh5co-started .fh5co-heading h2 {
+#fh5co-started, #fh5co-dresscode .fh5co-heading h2 {
   color: #fff;
 }
-#fh5co-started .fh5co-heading p {
+#fh5co-started, #fh5co-dresscode .fh5co-heading p {
   color: rgba(255, 255, 255, 0.5);
 }
-#fh5co-started .form-control {
+#fh5co-started, #fh5co-dresscode .form-control {
   background: rgba(255, 255, 255, 0.2);
   border: none !important;
   color: #fff;
@@ -1358,21 +1360,21 @@ form label {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-#fh5co-started .form-control::-webkit-input-placeholder {
+#fh5co-started, #fh5co-dresscode .form-control::-webkit-input-placeholder {
   color: #fff;
 }
-#fh5co-started .form-control:-moz-placeholder {
+#fh5co-started, #fh5co-dresscode .form-control:-moz-placeholder {
   /* Firefox 18- */
   color: #fff;
 }
-#fh5co-started .form-control::-moz-placeholder {
+#fh5co-started, #fh5co-dresscode .form-control::-moz-placeholder {
   /* Firefox 19+ */
   color: #fff;
 }
-#fh5co-started .form-control:-ms-input-placeholder {
+#fh5co-started, #fh5co-dresscode .form-control:-ms-input-placeholder {
   color: #fff;
 }
-#fh5co-started .form-control:focus {
+#fh5co-started, #fh5co-dresscode .form-control:focus {
   background: rgba(255, 255, 255, 0.3);
 }
 #fh5co-started .btn {
@@ -1386,17 +1388,17 @@ form label {
   padding-left: 50px;
   padding-right: 50px;
 }
-#fh5co-started .form-inline .form-group {
+#fh5co-started, #fh5co-dresscode .form-inline .form-group {
   width: 100% !important;
   margin-bottom: 10px;
 }
-#fh5co-started .form-inline .form-group .form-control {
+#fh5co-started, #fh5co-dresscode .form-inline .form-group .form-control {
   width: 100%;
 }
-#fh5co-started .fh5co-heading {
+#fh5co-started, #fh5co-dresscode .fh5co-heading {
   margin-bottom: 30px;
 }
-#fh5co-started .fh5co-heading h2 {
+#fh5co-started, #fh5co-dresscode .fh5co-heading h2 {
   margin-bottom: 0;
 }
 
